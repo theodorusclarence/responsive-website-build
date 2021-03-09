@@ -1,1 +1,308 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+$color-primary: #fb4b00;
+$color-light: #fff1eb;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+
+    @media (min-width: 700px) {
+        font-size: 2rem;
+    }
+}
+
+p {
+    font-size: 0.875rem;
+    color: #333;
+    line-height: 1.7;
+
+    @media (min-width: 700px) {
+        font-size: 1rem;
+    }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.layout {
+    width: 90%;
+    max-width: 68.75rem;
+    margin: 0 auto;
+}
+
+.btn {
+    background-color: $color-primary;
+    color: white;
+
+    font-weight: 700;
+    font-size: 0.875rem;
+
+    @media (min-width: 700px) {
+        font-size: 1.25rem;
+    }
+
+    padding: 0.5em 1em;
+    border-radius: 0.5rem;
+    border: 1px solid $color-primary;
+
+    &:hover {
+        background-color: #fd7034;
+        border-color: #fd7034;
+    }
+
+    &:active {
+        background-color: #ff5810;
+        border-color: #ff5810;
+    }
+
+    &--outline {
+        background: white;
+        color: $color-primary;
+
+        &:hover {
+            background: white;
+            color: #fd7034;
+        }
+
+        &:active {
+            background: white;
+            color: #ff5810;
+        }
+    }
+}
+
+// ------------------- Navigation Bar -------------------
+
+header {
+    box-shadow: 0 0 1rem rgba($color-primary, 0.15);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 10;
+}
+
+.navbar {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+        font-size: 1.125rem;
+        color: $color-primary;
+    }
+
+    &__link {
+        font-size: 0.75rem;
+
+        & + & {
+            margin-left: 0.5rem;
+        }
+
+        &--accent {
+            font-weight: 700;
+            color: $color-primary;
+        }
+
+        &:hover {
+            color: #fd7034;
+        }
+
+        &:active {
+            color: #ff5810;
+        }
+    }
+}
+
+//* ------------------- Hero -------------------
+
+.hero {
+    min-height: calc(100vh - 5rem);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 700px) {
+        flex-direction: row-reverse;
+    }
+
+    &__img {
+        width: 100%;
+
+        @media (min-width: 700px) {
+            max-width: 560px;
+            margin-left: 2rem;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0.5rem;
+        @media (min-width: 700px) {
+            font-size: 3rem;
+        }
+    }
+
+    &__text {
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    &__accent {
+        color: $color-primary;
+    }
+}
+
+//* ------------------- Why -------------------
+
+.why {
+    background-color: $color-light;
+    padding: 3rem 0;
+    text-align: center;
+
+    &__title {
+        margin-bottom: 0.5rem;
+    }
+
+    &__text {
+        margin-bottom: 2rem;
+    }
+
+    &__cardgroup {
+        max-width: 150px;
+        margin: 0 auto;
+
+        @media (min-width: 700px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: none;
+        }
+    }
+
+    &__card {
+        &-text {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        & + & {
+            margin-top: 2rem;
+
+            @media (min-width: 700px) {
+                margin-top: 0;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+//* ------------------- Create Website -------------------
+
+.createwebsite {
+    padding: 3rem 0;
+
+    &__header {
+        h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__cardgroup {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__card {
+        background: white;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 0 1rem rgba(black, 0.1);
+
+        &-img {
+            width: 100%;
+        }
+
+        &-content {
+            padding: 1rem;
+
+            h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                font-size: 0.75rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
+
+//* ------------------- Footer -------------------
+
+footer {
+    background-color: $color-light;
+    padding: 5rem 0;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__avatar {
+        border-radius: 50%;
+        width: 8rem;
+        margin-bottom: 1rem;
+    }
+
+    &__name {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    &__social {
+        font-size: 0.8rem;
+    }
+}
