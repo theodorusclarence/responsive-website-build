@@ -1,7 +1,7 @@
 # Finished Website
 
 ## Desktop
-![Desktop]('./images/screenshots/Desktop.jpg')
+![](./images/screenshots/Desktop.jpg)
 
 ## Mobile
-![Mobile]('./images/screenshots/Mobile.jpg')
+![](./images/screenshots/Mobile.jpg)
